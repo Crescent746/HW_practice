@@ -5,7 +5,7 @@ using namespace std;
 char Left[3][7];
 char Right[3][7];
 char result[3][7];
-bool IsFake(char c, bool light) {
+bool IsFake(char c, bool light) {  //同时判读是否为假币以及轻还是重
 	for (int i = 0;i < 3;i++) {
 		char* pleft, * pright;
 		 if(light){
@@ -19,7 +19,8 @@ bool IsFake(char c, bool light) {
 		 switch (result[i][0])
 		 {
 		 case 'u':
-			 if (strchr(pright, c) == NULL)
+			 if (strchr(pright, c) == NULL)  
+				 //strchr:查找某元素在字符串中第一次出现，char *strchr(const char *str, int character);
 				 return false;
 			 break;
 		 case 'd':
